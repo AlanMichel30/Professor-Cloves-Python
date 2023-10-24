@@ -1,0 +1,37 @@
+# DOCENTE: Prof. MSc. Cloves
+# AULA X: Python Noções OO
+# Estudante: Alan Michel
+
+class Sistema_solar:
+    def __init__(self, dis_1, dis_2, dis_3, dis_4):
+        self.dis_1 = dis_1
+        self.dis_2 = dis_2
+        self.dis_3 = dis_3
+        self.dis_4 = dis_4
+
+    def distancia(self):
+        return f"distância: {self.dis_1}Km ,distância: {self.dis_2}Km, distância: {self.dis_3}Km, distância: {self.dis_4}Km."
+
+class Distancia:
+    def __init__(self):
+        self.planetas = []
+
+    def adicionar_planeta(self, planeta):
+        self.planetas.append(planeta)
+
+    def listar_planetas(self):
+        for planeta in self.planetas:
+            print(planeta.distancia())
+
+# Criando uma instância da classe Cadastro
+nosso_sol = Distancia()
+
+# Criando instâncias da classe Pessoa e adicionando ao cadastro
+distancia1 = Sistema_solar("Mercúrio 57.910.000","Vênus 108.200.000","Terra 149.600.000","Marte 227.940.000")
+distancia2 = Sistema_solar("Júpiter 778.330.000","Saturno 1.429.400.000","Urano 2.870.990.000","Netuno 2.870.990.000")
+
+nosso_sol.adicionar_planeta(distancia1)
+nosso_sol.adicionar_planeta(distancia2)
+
+# Listando as pessoas no cadastro
+nosso_sol.listar_planetas()
